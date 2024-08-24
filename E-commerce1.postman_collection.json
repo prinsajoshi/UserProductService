@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "8914c023-8b4f-482d-a7b1-9e9cb4dc6e29",
-		"name": "E-commerce1",
+		"_postman_id": "62e05f1a-3570-421d-b6cc-fdc7a9bb7c27",
+		"name": "E-commerce2",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "9856114"
 	},
@@ -19,13 +19,13 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\":\"prinsajoshi11\",\r\n    \"password\":\"prinsajoshi11\"    \r\n}",
+									"raw": "{\r\n    \"username\":\"prinsajoshi17\",\r\n    \"password\":\"prinsajoshi17\"    \r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -42,6 +42,13 @@
 										"project_php",
 										"api",
 										"admin_create_user.php"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -54,13 +61,13 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"user_id\":10\r\n}",
+									"raw": "{\r\n    \"user_id\":13\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -77,6 +84,13 @@
 										"project_php",
 										"api",
 										"admin_create_user.php"
+									],
+									"query": [
+										{
+											"key": "a",
+											"value": null,
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -88,7 +102,7 @@
 					"name": "Product Operations",
 					"item": [
 						{
-							"name": "Get by id",
+							"name": "Get By ID",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -97,13 +111,13 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_id\":4\r\n}",
+									"raw": "{\r\n    \"product_id\": 7\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -111,7 +125,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/admin_product.php",
+									"raw": "http://localhost/project_php/api/product.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -119,57 +133,29 @@
 									"path": [
 										"project_php",
 										"api",
-										"admin_product.php"
+										"product.php"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Get all",
+							"name": "Get All",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
-										"type": "text"
-									}
-								],
-								"url": {
-									"raw": "http://localhost/project_php/api/admin_product.php",
-									"protocol": "http",
-									"host": [
-										"localhost"
-									],
-									"path": [
-										"project_php",
-										"api",
-										"admin_product.php"
-									]
-								}
-							},
-							"response": []
-						},
-						{
-							"name": "Delete by product_id",
-							"request": {
-								"method": "DELETE",
-								"header": [
-									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
-										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_id\": 15\r\n}\r\n",
+									"raw": "",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -177,7 +163,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/admin_category.php",
+									"raw": "http://localhost/project_php/api/product.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -185,7 +171,49 @@
 									"path": [
 										"project_php",
 										"api",
-										"admin_category.php"
+										"product.php"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": "",
+											"disabled": true
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete product",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "e57fd98e4459fd22bd9e35c168a4c002",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"product_id\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost/project_php/api/product.php",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"path": [
+										"project_php",
+										"api",
+										"product.php"
 									]
 								}
 							},
@@ -202,19 +230,14 @@
 								"method": "POST",
 								"header": [
 									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_name\": \"Laptop1\",\r\n    \"description\": \"A high-performance laptop\",\r\n    \"category\": \"Electronics\",\r\n    \"price\": 1200.00,\r\n    \"user_id\": 7\r\n}\r\n",
+									"raw": "{\r\n    \"product_name\": \"Laptop2sfssffsfs\",\r\n    \"description\": \"A high-performance laptop\",\r\n    \"category\": \"Electronics\",\r\n    \"price\": 1200.00,\r\n    \"user_id\": 7\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -222,7 +245,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/admin_category.php",
+									"raw": "http://localhost/project_php/api/category.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -230,14 +253,14 @@
 									"path": [
 										"project_php",
 										"api",
-										"admin_category.php"
+										"category.php"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Get all Category",
+							"name": "Get All Category",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -246,7 +269,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
@@ -260,7 +283,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/admin_category.php",
+									"raw": "http://localhost/project_php/api/category.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -268,14 +291,21 @@
 									"path": [
 										"project_php",
 										"api",
-										"admin_category.php"
+										"category.php"
+									],
+									"query": [
+										{
+											"key": null,
+											"value": "",
+											"disabled": true
+										}
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Get by category",
+							"name": "Get By Category",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -284,7 +314,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
@@ -298,7 +328,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/admin_category.php",
+									"raw": "http://localhost/project_php/api/category.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -306,7 +336,14 @@
 									"path": [
 										"project_php",
 										"api",
-										"admin_category.php"
+										"category.php"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -318,19 +355,14 @@
 								"method": "PUT",
 								"header": [
 									{
-										"key": "Content-Type",
-										"value": "application/json",
-										"type": "text"
-									},
-									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_id\": 14,\r\n    \"product_name\": \"Updated Laptop\",\r\n    \"description\": \"An updated high-performance laptop\",\r\n    \"category\": \"Electronics\",\r\n    \"price\": 1100.00,\r\n    \"user_id\": 7\r\n}\r\n",
+									"raw": "{\r\n    \"product_id\": 23,\r\n    \"product_name\": \"Updated Laptop\",\r\n    \"description\": \"An updated high-performance laptop\",\r\n    \"category\": \"Electronics\",\r\n    \"price\": 1100.00,\r\n    \"user_id\": 7\r\n}\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -338,7 +370,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/admin_category.php",
+									"raw": "http://localhost/project_php/api/category.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -346,7 +378,7 @@
 									"path": [
 										"project_php",
 										"api",
-										"admin_category.php"
+										"category.php"
 									]
 								}
 							},
@@ -359,7 +391,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "eb9e53d76a87963a4152987e5a363ee7",
+										"value": "41e243234995a11900d384c5a81663e1",
 										"type": "text"
 									}
 								],
@@ -373,7 +405,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/admin_category.php",
+									"raw": "http://localhost/project_php/api/category.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -381,7 +413,7 @@
 									"path": [
 										"project_php",
 										"api",
-										"admin_category.php"
+										"category.php"
 									]
 								}
 							},
@@ -410,7 +442,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost/project_php/api/admin_login.php",
+							"raw": "http://localhost/project_php/api/login.php",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -418,7 +450,7 @@
 							"path": [
 								"project_php",
 								"api",
-								"admin_login.php"
+								"login.php"
 							]
 						}
 					},
@@ -433,7 +465,7 @@
 					"name": "Product Operations",
 					"item": [
 						{
-							"name": "Get product by id",
+							"name": "Get Product By ID",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -442,13 +474,13 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "55be5ffbb20ba6b5e34d66cfade942ef",
+										"value": "e57fd98e4459fd22bd9e35c168a4c002",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_id\":11\r\n}",
+									"raw": "{\r\n    \"product_id\":14\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -456,7 +488,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/user_product.php",
+									"raw": "http://localhost/project_php/api/product.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -464,25 +496,25 @@
 									"path": [
 										"project_php",
 										"api",
-										"user_product.php"
+										"product.php"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Get all",
+							"name": "Get All",
 							"request": {
 								"method": "GET",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "55be5ffbb20ba6b5e34d66cfade942ef",
+										"value": "e57fd98e4459fd22bd9e35c168a4c002",
 										"type": "text"
 									}
 								],
 								"url": {
-									"raw": "http://localhost/project_php/api/user_product.php",
+									"raw": "http://localhost/project_php/api/product.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -490,26 +522,26 @@
 									"path": [
 										"project_php",
 										"api",
-										"user_product.php"
+										"product.php"
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Update product",
+							"name": "Update Product",
 							"request": {
 								"method": "PUT",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "55be5ffbb20ba6b5e34d66cfade942ef",
+										"value": "e57fd98e4459fd22bd9e35c168a4c002",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "    {\r\n        \"product_id\": 10,\r\n        \"product_name\": \"Desk Lamp\",\r\n        \"description\": \"Adjustable desk lamp with LED lighting and touch control.\",\r\n        \"category\": \"Furniture\",\r\n        \"price\": 39.99\r\n    }\r\n",
+									"raw": "    {\r\n        \"product_id\": 7,\r\n        \"product_name\": \"Desk Lamp sjsajkseeeeeeeeeeee\",\r\n        \"description\": \"Adjustable desk lamp with LED lighting and touch control.\",\r\n        \"category\": \"Electronics\",\r\n        \"price\": 39.99\r\n    }\r\n",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -517,7 +549,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/user_product.php",
+									"raw": "http://localhost/project_php/api/product.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -525,26 +557,33 @@
 									"path": [
 										"project_php",
 										"api",
-										"user_product.php"
+										"product.php"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
 									]
 								}
 							},
 							"response": []
 						},
 						{
-							"name": "Delete product",
+							"name": "Delete Product",
 							"request": {
 								"method": "DELETE",
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "55be5ffbb20ba6b5e34d66cfade942ef",
+										"value": "e57fd98e4459fd22bd9e35c168a4c002",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"product_id\": 11\r\n}",
+									"raw": "{\r\n    \"product_id\":23\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -552,7 +591,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/user_product.php",
+									"raw": "http://localhost/project_php/api/product.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -560,7 +599,7 @@
 									"path": [
 										"project_php",
 										"api",
-										"user_product.php"
+										"product.php"
 									]
 								}
 							},
@@ -573,13 +612,13 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "55be5ffbb20ba6b5e34d66cfade942ef",
+										"value": "e57fd98e4459fd22bd9e35c168a4c002",
 										"type": "text"
 									}
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "   {\r\n        \"product_name\": \"Gaming mouse9\",\r\n        \"description\": \"Mechanical gaming keyboard with customizable RGB backlighting mouse.\",\r\n        \"category\": \"Furniture\",\r\n        \"price\": 59.99\r\n    }",
+									"raw": "   {\r\n        \"product_name\": \"Gaming mouseeeeebbrrr\",\r\n        \"description\": \"Mechanical gaming keyboard with customizable RGB backlighting mouse.\",\r\n        \"category\": \"Furniture\",\r\n        \"price\": 59.99\r\n    }",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -587,7 +626,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/user_product.php",
+									"raw": "http://localhost/project_php/api/product.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -595,7 +634,14 @@
 									"path": [
 										"project_php",
 										"api",
-										"user_product.php"
+										"product.php"
+									],
+									"query": [
+										{
+											"key": "",
+											"value": null,
+											"disabled": true
+										}
 									]
 								}
 							},
@@ -604,10 +650,10 @@
 					]
 				},
 				{
-					"name": "UserLogin",
+					"name": "User Login",
 					"item": [
 						{
-							"name": "Login user",
+							"name": "User Login",
 							"request": {
 								"method": "POST",
 								"header": [
@@ -619,7 +665,7 @@
 								],
 								"body": {
 									"mode": "raw",
-									"raw": "{\r\n    \"username\":\"prinsajoshi4\",\r\n    \"password\":\"prinsajoshi4\"\r\n}",
+									"raw": "{\r\n    \"username\":\"prinsajoshi10\",\r\n    \"password\":\"prinsajoshi10\"\r\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -627,7 +673,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/user_login.php",
+									"raw": "http://localhost/project_php/api/login.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -635,7 +681,7 @@
 									"path": [
 										"project_php",
 										"api",
-										"user_login.php"
+										"login.php"
 									]
 								}
 							},
@@ -647,7 +693,7 @@
 					"name": "Category Operations",
 					"item": [
 						{
-							"name": "Get by category",
+							"name": "Get By Category",
 							"protocolProfileBehavior": {
 								"disableBodyPruning": true
 							},
@@ -656,7 +702,7 @@
 								"header": [
 									{
 										"key": "Authorization",
-										"value": "55be5ffbb20ba6b5e34d66cfade942ef",
+										"value": "e57fd98e4459fd22bd9e35c168a4c002",
 										"type": "text"
 									}
 								],
@@ -670,7 +716,7 @@
 									}
 								},
 								"url": {
-									"raw": "http://localhost/project_php/api/user_category.php",
+									"raw": "http://localhost/project_php/api/category.php",
 									"protocol": "http",
 									"host": [
 										"localhost"
@@ -678,7 +724,7 @@
 									"path": [
 										"project_php",
 										"api",
-										"user_category.php"
+										"category.php"
 									]
 								}
 							},

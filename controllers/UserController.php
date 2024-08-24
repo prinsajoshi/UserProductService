@@ -6,9 +6,10 @@ class UserController {
     private $userModel;
 
     public function __construct($db) {
-        $this->userModel = new User($db);
+        $this->userModel = new User($db); // Initialize User model
     }
 
+    // Authenticate user and return token if successful
     public function authenticate($username, $password) {
         $this->userModel->username = $username;
         $this->userModel->password = $password;
@@ -23,9 +24,12 @@ class UserController {
             }
         }
 
-        return ["message" => "Incorrect password"];
+        return [
+            "message" => "Incorrect password"
+        ];
     }
 
+    // Retrieve user details by token
     public function getUserByToken($token) {
         $this->userModel->token = $token;
         return $this->userModel->getUserByToken();

@@ -9,7 +9,7 @@ class AdminController {
     private $productModel;
 
     public function __construct($db) {
-        $this->adminModel = new Admin($db);  // Admin model object
+        $this->adminModel = new Admin($db); // Admin model object
         $this->userModel = new User($db);
         $this->productModel = new UserProduct($db);
     }
@@ -19,6 +19,7 @@ class AdminController {
         $this->adminModel->username = $username;
         $this->adminModel->password = $password;
 
+        // Check credentials against the database
         if ($this->adminModel->checkCredentials()) {
             $this->adminModel->updateToken(); // Update the token in the database
             return [
@@ -33,60 +34,30 @@ class AdminController {
     }
 
     // Create a new user if admin token is valid
-    public function createUser($username, $password, $adminToken) {
-        if ($this->adminModel->isTokenValid($adminToken)) {
-            $this->userModel->username = $username;
-            $this->userModel->password = $password; // No need to encode as base64 for user password
-            return $this->userModel->createUser();
-        } else {
-            return [
-                "message" => "Invalid admin token"
-            ];
-        }
+    public function createUser($username, $password) {
+        $this->userModel->username = $username;
+        $this->userModel->password = $password; // No need to encode as base64 for user password
+        return $this->userModel->createUser();
     }
 
     // Delete a user if admin token is valid
-    public function deleteUser($userId, $adminToken) {
-        if ($this->adminModel->isTokenValid($adminToken)) {
-            return $this->userModel->deleteUser($userId);
-        } else {
-            return [
-                "message" => "Invalid admin token"
-            ];
-        }
+    public function deleteUser($userId) {
+        return $this->userModel->deleteUser($userId);
     }
 
     // Get products by ID or all products if ID is not provided
-    public function getProducts($adminToken, $productId = null) {
-        if ($this->adminModel->isTokenValid($adminToken)) {
-            return $this->productModel->getProducts($productId);
-        } else {
-            return [
-                "message" => "Invalid admin token"
-            ];
-        }
+    public function getProducts($productId = null) {
+        return $this->productModel->getProducts($productId);
     }
 
     // Get products by category if admin token is valid
-    public function getCategory($adminToken, $category = null) {
-        if ($this->adminModel->isTokenValid($adminToken)) {
-            return $this->productModel->getCategory($category);
-        } else {
-            return [
-                "message" => "Invalid admin token"
-            ];
-        }
+    public function getCategory($category = null) {
+        return $this->productModel->getCategory($category);
     }
 
     // Delete a category if admin token is valid
-    public function deleteCategory($adminToken, $category = null) {
-        if ($this->adminModel->isTokenValid($adminToken)) {
-            return $this->productModel->deleteCategory($category);
-        } else {
-            return [
-                "message" => "Invalid admin token"
-            ];
-        }
+    public function deleteCategory($category = null) {
+        return $this->productModel->deleteCategory($category);
     }
 }
 ?>

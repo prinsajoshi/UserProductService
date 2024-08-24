@@ -2,13 +2,14 @@
 require_once '../models/AdminProductCategory.php';
 require_once '../models/EnumProductCategory.php';
 
-class ProductController {
+class AdminProductController {
     private $productModel;
 
     public function __construct($db) {
-        $this->productModel = new Product($db);
+        $this->productModel = new Product($db); // Initialize Product model
     }
 
+    // Create a new product
     public function createProduct($product_name, $description, $category, $price, $user_id) {
         $this->productModel->product_name = $product_name;
         $this->productModel->description = $description;
@@ -23,14 +24,17 @@ class ProductController {
         }
     }
 
+    // Get all products
     public function getAllProducts() {
         return $this->productModel->getAllProducts();
     }
 
+    // Get a product by its ID
     public function getProductById($product_id) {
         return $this->productModel->getProductById($product_id);
     }
 
+    // Update an existing product
     public function updateProduct($product_id, $product_name, $description, $category, $price, $user_id) {
         $this->productModel->product_id = $product_id;
         $this->productModel->product_name = $product_name;
@@ -46,6 +50,7 @@ class ProductController {
         }
     }
 
+    // Delete a product by its ID
     public function deleteProduct($product_id) {
         if ($this->productModel->deleteProduct($product_id)) {
             return ["message" => "Product deleted successfully"];
@@ -54,6 +59,7 @@ class ProductController {
         }
     }
 
+    // Get products by category
     public function getProductsByCategory($category) {
         return $this->productModel->getProductsByCategory($category);
     }
